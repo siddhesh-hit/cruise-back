@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "64ba1b6a6267ea8928238513"
+  },
+  "eventId": {
+    "$oid": "64ba1bac6267ea8928238514"
+  },
+  "latitude": "13.45",
+  "longitude": "24.432",
+  "timestamp": {
+    "$date": "2023-07-18T10:07:47.000Z"
+  },
+  "accuracy": "10",
+  "additionalInfo": "info"
+}]

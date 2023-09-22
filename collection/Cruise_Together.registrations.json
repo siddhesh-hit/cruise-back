@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "64b797ab6c27f7368a922962"
+  },
+  "name": "Swapnil",
+  "date_of_birth": "20-10-1998",
+  "gender": "male",
+  "phone": 1245678908,
+  "email": "swap@gmail.com",
+  "image": "1689753515503-download.jpg",
+  "__v": 0,
+  "timestamp": {
+    "$date": "1999-12-31T18:30:00.000Z"
+  },
+  "followers": [
+    {
+      "$oid": "64ba78df6267ea892823856b"
+    }
+  ],
+  "following": [
+    {
+      "$oid": "64ba78ea6267ea892823856c"
+    }
+  ]
+}]

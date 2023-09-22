@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "64b8e17fd68d82bc6235645e"
+  },
+  "company_name": "BMW",
+  "brand_name": "x3",
+  "document": "1689837951884-demoPdf.pdf",
+  "image": "1689837951889-demoImage.jpg",
+  "__v": 0,
+  "vehicle_type": "64b8c294af0046ef2081c97d",
+  "timestamp": {
+    "$date": "2023-07-18T10:07:47.000Z"
+  }
+}]

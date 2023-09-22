@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "64be0a76d28220e90b62abca"
+  },
+  "userId": {
+    "$oid": "64be0a8ad28220e90b62abcb"
+  },
+  "description": "post description",
+  "likes": "123",
+  "comments": [
+    {
+      "userId": {
+        "$oid": "64be0c07d28220e90b62abcc"
+      },
+      "comment": "user comment",
+      "timestamp": {
+        "$date": "2023-07-18T10:07:47.000Z"
+      }
+    }
+  ],
+  "timestamp": {
+    "$date": "2023-07-18T10:07:47.000Z"
+  }
+}]

@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "64b91d9856c6b8f525d8d250"
+  },
+  "accident_description": "accident description",
+  "accident_Type": "minor",
+  "location": "location",
+  "Severity": "asdfllj",
+  "image": "demo.jpg",
+  "timestamp": {
+    "$date": "2023-07-18T10:07:47.000Z"
+  }
+}]

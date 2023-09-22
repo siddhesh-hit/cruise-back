@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "64b91a6556c6b8f525d8d247"
+  },
+  "sender": {
+    "$oid": "64b91a7f56c6b8f525d8d248"
+  },
+  "reciever": {
+    "$oid": "64b91a8b56c6b8f525d8d249"
+  },
+  "message": "message",
+  "attachment_type": "image",
+  "attachment": "demo.jpg",
+  "timestamp": {
+    "$date": "2023-07-18T10:07:47.000Z"
+  }
+}]

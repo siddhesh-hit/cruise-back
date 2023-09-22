@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "64ba32646267ea8928238561"
+  },
+  "type": "adhar\" | \"passport",
+  "number": "12345678",
+  "name": "name as on document",
+  "address": "address as on document",
+  "date_of_birth": {
+    "$date": "2023-07-18T10:07:47.000Z"
+  },
+  "other_info": "....",
+  "userId": {
+    "$oid": "64ba334d6267ea8928238562"
+  },
+  "status": "1"
+}]
