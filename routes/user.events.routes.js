@@ -16,6 +16,8 @@ const {
   removeParticipants,
   getAllUserEvents,
   getParticipantsMapDetails,
+  getAllCancelledEvents,
+  cancelEvent,
 } = require("../controllers/user.event");
 
 const storage = multer.diskStorage({
@@ -48,6 +50,7 @@ router.put("/updateEventStatus/:id", updateEventStatus);
 router.put("/addParticipants/:id", addParticipants);
 router.put("/acceptParticipants/:id", acceptParticipants);
 router.put("/removeParticipants/:id", removeParticipants);
+router.put("/cancelEvent/:id", cancelEvent);
 
 //delete event
 router.delete("/deleteEventDetail/:id", deleteEventDetail);
@@ -58,6 +61,8 @@ router.get("/getSingleEventDetail/:id", getSingleEventDetail);
 router.get("/getAllOngoingEvents", getAllOngoingEvents);
 router.get("/getAllUpcomingEvents", getAllUpcomingEvents);
 router.get("/getAllUserEvents/:id", getAllUserEvents);
+router.get("/getAllCancelledEvents", getAllCancelledEvents);
+
 router.get("/getParticipantsMapDetails/:id", getParticipantsMapDetails);
 
 module.exports = router;

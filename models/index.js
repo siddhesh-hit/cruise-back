@@ -231,8 +231,8 @@ const MapUserEvent = sequelize.define(
       autoIncrement: true,
     },
     current_position: {
-      type: Sequelize.ARRAY(Sequelize.JSONB), // Store as array of JSON objects
-      defaultValue: [],
+      type: Sequelize.GEOMETRY("POINT"),
+      allowNull: true,
     },
     dest_distance: {
       type: Sequelize.STRING,
@@ -245,13 +245,32 @@ const MapUserEvent = sequelize.define(
       type: Sequelize.TIME,
     },
     alternative_route: {
-      type: Sequelize.ARRAY(Sequelize.STRING),
-      defaultValue: [],
+      type: Sequelize.GEOMETRY("LINESTRING"),
     },
     leader: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
       defaultValue: false,
+    },
+  },
+  {
+    timestamps: false,
+  }
+);
+
+const KYCDetail = sequelize.define(
+  "kycDetail",
+  {
+    kyc_id: {
+      type: Sequelize.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    kyc_type: {
+      type: Sequelize.STRING,
+    },
+    kyc_document: {
+      type: Sequelize.STRING,
     },
   },
   {
@@ -277,6 +296,9 @@ UserCredential.hasMany(MapUserEvent, { foreignKey: "cred_id" });
 MapUserEvent.belongsTo(EventDetail, { foreignKey: "event_id" });
 EventDetail.hasMany(MapUserEvent, { foreignKey: "event_id" });
 
+KYCDetail.belongsTo(UserCredential, { foreignKey: "cred_id" });
+UserCredential.hasMany(KYCDetail, { foreignKey: "cred_id" });
+
 module.exports = {
   sequelize,
   db,
@@ -286,4 +308,5 @@ module.exports = {
   EventDetail,
   UserPost,
   MapUserEvent,
+  KYCDetail,
 };

@@ -170,6 +170,42 @@ exports.deleteEventDetail = async (req, res) => {
   }
 };
 
+// cancel event method
+exports.cancelEvent = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      res.status(501).json({
+        message: "No id passed",
+      });
+      return;
+    }
+
+    const event = await EventDetail.findOne({ where: { event_id: id } });
+
+    if (!event) {
+      res.status(404).json({ error: "EventDetail not found!" });
+      return;
+    }
+
+    const updated = await EventDetail.update(
+      {
+        event_status: "cancelled",
+      },
+      {
+        where: { event_id: id },
+      }
+    );
+    if (updated) {
+      res.status(200).json(updated);
+    } else {
+      res.status(404).json({ error: "EventDetail not found!" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 //find all upcoming events method
 exports.getAllUpcomingEvents = async (req, res) => {
   try {
@@ -189,6 +225,18 @@ exports.getAllOngoingEvents = async (req, res) => {
     const currentDate = new Date();
     const eventDetail = await EventDetail.findAll({
       where: { event_status: "ongoing" },
+    });
+    res.status(200).json(eventDetail);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// find all cancelled events method
+exports.getAllCancelledEvents = async (req, res) => {
+  try {
+    const eventDetail = await EventDetail.findAll({
+      where: { event_status: "cancelled" },
     });
     res.status(200).json(eventDetail);
   } catch (error) {

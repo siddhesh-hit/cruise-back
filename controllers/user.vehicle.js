@@ -3,6 +3,7 @@ const { Vehicle } = require("../models/index");
 //post method
 exports.createVehicle = async (req, res) => {
   try {
+    console.log(req.body, req.file);
     if (!req.body.cred_id) {
       res.status(501).json({
         message: "No id passed",

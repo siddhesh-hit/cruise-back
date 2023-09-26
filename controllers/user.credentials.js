@@ -17,6 +17,17 @@ exports.createUser = async (req, res) => {
       return;
     }
 
+    const userFind = await UserCredential.findOne({
+      where: { phone_number: req.body.phone_number },
+    });
+
+    if (userFind) {
+      res.status(409).json({
+        message: "User already exists",
+      });
+      return;
+    }
+
     const userCreds = await UserCredential.create(req.body);
 
     if (userCreds) {
